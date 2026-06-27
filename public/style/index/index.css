@@ -1,0 +1,198 @@
+
+:root {
+  --scrollbar-track-color: #f5f0e1;
+  --scrollbar-thumb-color: #4ca4f6;
+  --scrollbar-thumb-hover: #96ccf8;
+}
+*{
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+}
+
+main{
+    background-color:#f5f0e1;
+    padding: 50px;
+    padding-top:30px;
+}
+.all-cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 35px ;
+    justify-content: space-between;
+    padding: 8px;
+}
+.card{
+    background-color: white;
+    position: relative;
+    text-decoration: none;   /* Removes the default underline */
+    color: inherit; 
+    height: 370px;
+    width: 25%;
+    flex: 1 1 300px;
+    max-width: 320px;
+}
+a{
+    text-decoration: none;   /* Removes the default underline */
+    color: inherit; 
+    height: 100%;
+    width: 100%;
+    flex: 1 1 300px;
+    max-width: 320px;
+}
+/* .card-holder{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+    box-sizing: border-box; 
+    border-radius: 12px;
+    border: 2px solid black;
+    box-shadow: 5px 5px;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 0.2s ease;
+} */
+.card{
+    position: relative;
+    width: 25%;
+    height: 370px;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+    box-sizing: border-box; 
+    border-radius: 12px;
+    border: 3px solid black;
+    box-shadow: 5px 5px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 0.2s ease;
+    z-index: 0;
+}
+/* .card-holder::before{
+    height: 100%;
+    width: 100%;
+    content: "";
+    position: absolute;
+    background-color: rgba(231, 202, 107, 0.738);
+    top: 0%;
+    left: 0%;
+    transform: scale(0.94);
+    z-index: -1;
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),opacity 0.4s ease-out;
+    will-change: transform, opacity;
+    border-radius: 12px;
+
+} */
+.card::before{
+    height: 100%;
+    width: 100%;
+    content: "";
+    position: absolute;
+    background-color: rgba(231, 202, 107, 0.738);
+    top: 0%;
+    left: 0%;
+    transform: scale(0.94);
+    z-index: -1;
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),opacity 0.4s ease-out;
+    will-change: transform, opacity;
+    border-radius: 12px;
+
+}
+.card-holder img{
+    width: 99%;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 2px solid #000000;
+}
+.title{
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 650;
+  font-size: 18px;
+  padding-left: 10px;
+}
+.price{
+    /* display: inline; */
+}
+.rating{
+    /* display: inline; */
+    color: rgb(255, 166, 0);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.rating span{
+    color: black;
+}
+.extra-details{
+    padding: 0 10px 0 10px;
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    justify-content: space-between;
+    font-weight: 500;
+    color: rgb(81, 81, 81);
+}
+/* .card-holder:hover::before{
+    transform: scale(1);
+    opacity: 1;
+}
+.card-holder:hover{
+    transform: translateY(-5px);
+}
+.card-holder:active {
+    transform: translate(6px, 6px); 
+    box-shadow: 0px 0px 0px #000000;
+} */
+.card:hover::before{
+    transform: scale(1);
+    opacity: 1;
+}
+.card:hover{
+    transform: translateY(-5px);
+}
+.card:active {
+    transform: translate(6px, 6px); /* Pushes down into the page */
+    box-shadow: 0px 0px 0px #000000; /* Shadow disappears because it's pressed flat */
+}
+#like-btn{
+    width: 30px;
+    z-index: 3;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    transform: scale(1);
+    transition: transform 0.2s ease;
+}
+.heart{
+    width: 100%;
+    height: 100%;
+}
+h1{
+    font-family: "Bitcount Grid Double", system-ui;
+    font-size: 40px;
+    font-weight: 350;
+    color: rgb(255, 204, 0);
+}
+.heart path{
+    fill: rgba(128,128,128,.3);
+    stroke: white;
+    stroke-width: 1.5px;
+}
+.heart .like-btn-color{
+    fill: rgba(230, 74, 105, 0.977) ;
+    stroke-width: 2;
+}
+#like-btn:active{
+    transform: scale(0.85);
+}
+.rating svg{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    height: 25px;
+    width: 20px;
+    stroke-width: 1.5;
+    stroke: black;
+}

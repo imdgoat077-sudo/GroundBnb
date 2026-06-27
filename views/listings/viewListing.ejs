@@ -1,0 +1,134 @@
+<%-include("../includes/nav")%>
+<link rel="stylesheet" href="/style/view-listing/viewListingLeft.css">
+<link rel="stylesheet" href="/style/view-listing/viewListingRight.css">
+<main>
+    <div class="left-container">
+        <div class="card-box">
+            <button class="like-btn">
+                <svg class="heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <path d="m15.9998 28.6668c7.1667-4.8847 14.3334-10.8844 14.3334-18.1088 0-1.84951-.6993-3.69794-2.0988-5.10877-1.3996-1.4098-3.2332-2.11573-5.0679-2.11573-1.8336 0-3.6683.70593-5.0668 2.11573l-2.0999 2.11677-2.0988-2.11677c-1.3995-1.4098-3.2332-2.11573-5.06783-2.11573-1.83364 0-3.66831.70593-5.06683 2.11573-1.39955 1.41083-2.09984 3.25926-2.09984 5.10877 0 7.2244 7.16667 13.2241 14.3333 18.1088z"/>
+                </svg>
+            </button>
+            <img src="<%=reqListing.image.url%>" alt="">
+            <button class="reserve-btn">
+                    Reserve
+            </button>
+            <div class="small-info">
+                <div class="smaller-info">
+                    <img src="/icons/user-icons/user-icon-2.png" alt="">
+                    <p>Hosted By <a href="">Pranav Kumar N</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right-container">
+        <div class="main-container">
+            <div class="info-box">
+                <div class="title">
+                    <%=reqListing.title%>
+                    <div class="ratings"><p>★ &middot; 5&nbsp;&middot;&nbsp;&nbsp;<a href="#rating-box-container">View All 6 Reviews</a></p></div>
+                </div>
+                <div class="description">
+                    <h2>Description : </h2>
+                    <p>
+                        <%-reqListing.description%>
+                    </p>
+                    <button class="maximize"><img src="/icons/user-icons/expand.svg" alt=""></button>
+                </div>
+                <div class="body-backdrop">
+                    <div class="expanded">
+                        <h2>Description : </h2>
+                        <p>
+                            <%-reqListing.description%>
+                        </p>
+                        <button class="minimize"><img src="/icons/user-icons/collapse.svg" alt=""></button>
+                    </div>
+                </div>
+                <div class="amenities"></div>
+                <div class="calendar" id="calendar"><%-include("../partials/date-picker.ejs")%></div>
+            </div>
+            <div class="price-box-holder">
+                <div class="Location">
+                    <div class="head">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px" fill="currentColor">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <span>Location :</span>
+                    </div> 
+                    <div class="loc-content">
+                        <div class="location-info"><%=reqListing.location%> , <%=reqListing.country%></div>
+                        <div class="redirect-map">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px" fill="currentColor">
+                                <path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42 5.43 5.43H5v2z"/>
+                            </svg>
+                            <a href="#maps-div">
+                                <p>See In Maps</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="price-box">
+                    <div class="date-choose">
+                        <div class="date-box" id="check-in">
+                            <p>Check In Date</p>
+                            <input type="text" placeholder="Add Date">
+                        </div>
+                        <div class="date-box" id="check-out">
+                            <p>Check Out Date</p>
+                            <input type="text" placeholder="Add Date">
+                        </div>
+                    </div>
+                    <div id="ppl-number">
+                    <button class="sign" id="minus-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                    </button>
+                    <p class="guest-count">1 Guests</p>
+                    <button class="sign" id="plus-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                    </button>
+                    </div>
+                    <span class="max-guests">Max Guests Capacity Is 7</span>
+                    <hr style="position: relative;width: 98%; height: 0px; right: 3.5px; border : transparent;border-top: 2px dashed grey ; margin: 5px 0;">
+                    <br>
+                    <div class="price-per-night">
+                        <div class="text summa" >Per Night : </div>
+                        <div class="price text">₹ <%=reqListing.price%> Only</div>
+                    </div>
+                    <div class="price-final">
+                        <div class="price-breakdown">
+                            <span id="breakdown-text">₹ <%=reqListing.price%> × 1 night</span>
+                            <span id="breakdown-amount">₹ <%=reqListing.price%></span>
+                        </div>
+                        <hr class="price-divider">
+                        <div class="total-row">
+                            <span>Total Price : </span>
+                            <span id="final-total">₹ <%=reqListing.price%></span>
+                        </div>
+                    </div>
+                    <button id="final-reserve">
+                        Reserve
+                    </button>
+                </div>
+            </div>
+        </div>   
+        <div id="rating-box-container">
+            <div class="rating-box">
+                <div class="ratings-head">★ &middot;<p>&nbsp;All Ratings&nbsp;</p> &middot; ★</div>
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+    window.listingLocation = "<%= reqListing.location %>";
+    window.price = Number("<%=reqListing.price%>");
+    console.log(window.price)
+</script>
+<script src="/script/frontend-date-picker.js"></script>
+<script src="/script/frontend-viewList.js"></script>
+</body>
+</html>

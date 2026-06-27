@@ -1,0 +1,142 @@
+*{
+    box-sizing: border-box;
+}
+.date-container{
+    font-family: "Space Grotesk",sans-serif;
+    background-color: white;
+    display: flex;
+    gap: 0px;
+    flex-direction: column;
+    padding: 10px;
+    position: relative;
+}
+
+.calendar-holder{
+    display: flex;
+    gap: 41px;
+}
+.title-cal{
+    font-size: 25px;
+    font-weight: 600;
+    /* width: max-content; */
+    text-align: center;
+    color: rgb(235, 133, 133);
+}
+.main-calendar .month-name{
+    color: rgb(6, 77, 163);
+    text-align: center;
+    text-decoration: underline;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.main-calendar{
+    height: 100%;
+    width: max-content;
+}
+.months-choose{
+    font-family: "Space Grotesk",sans-serif;
+    font-size: 1.3rem;
+    text-align: center;
+}
+.months-choose input{
+    height: 30px;
+}
+.date-container button{
+    font-family: "Space Grotesk",sans-serif;
+    font-size: 1rem;
+    background-color: white;
+    border: none;
+    font-weight: 550;
+}
+.days,.dates{
+    display: grid;
+    grid-template-columns: repeat(7,1.6rem);
+    gap: 0.8rem;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+.dates button{
+    text-align: center;
+    box-sizing: content-box;
+    padding: 4px;
+    outline-offset: 0px;
+}
+.dates button:hover{
+    /* background-color: rgb(255, 204, 0); */
+    outline: 2px solid black;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.dates button:disabled{
+    text-decoration-line: line-through;
+    color: #a1a1a1;
+}
+.dates button:disabled:hover{
+    background-color: white;
+    pointer-events: none;
+    outline: none;
+}
+.days{
+    font-size: 1.2rem;
+    font-family: "Space Grotesk",sans-serif;
+    margin-bottom: 5px;
+    font-weight: 700;
+    text-align: center;
+}
+.check-in{
+    background-color: rgba(244, 142, 142, 0.568) !important;
+    outline: 2px solid black;
+    border-radius: 7px;
+}
+.check-out{
+    background-color: rgba(77, 200, 83, 0.568) !important;
+    outline: 2px solid black;
+    border-radius: 7px;
+}
+
+.title-cal{
+    display: flex;
+    align-items: center;
+}
+.title-cal button{
+    height: 40px;
+    width: 40px;
+    background-color: rgb(213, 231, 228);
+    border-radius: 50%;
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.isToday{
+    border: 3px solid black;
+}
+.buttondiv{
+    padding: 5px;
+    display: flex;
+    gap: 50px;
+    margin-left: auto;
+}
+.mover{
+    cursor: pointer;
+}
+.title-cal p{
+    margin: auto;
+}
+.prev-month svg{
+    transform: translateX(2px);
+    transition: transform 0.35s ease;
+}
+.next-month svg{
+    transform: translateX(-2px);
+    transition: transform 0.35s ease;
+}
+.prev-month:hover svg{
+    transform: translateX(0px);
+}
+.next-month:hover svg{
+    transform: translateX(0px);
+}

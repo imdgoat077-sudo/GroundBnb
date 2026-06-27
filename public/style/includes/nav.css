@@ -1,0 +1,297 @@
+
+:root{
+    --slider-color: rgb(241, 200, 55);
+}
+*{
+    padding: 0;
+    margin: 0px;
+}
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff; /* Give it a background color so cards don't bleed through it when scrolling */
+    z-index: 100;              /* Ensures the header stays on top of the `.card` elements (which have z-index: 0) */
+}
+nav {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 24px 60px 24px 60px;
+    box-sizing: border-box; /* Prevents padding from making the nav wider than the viewport */
+    transition: 0.35s;
+    border-bottom: 3px solid black;
+}
+.nav-container{
+    padding: 5px 5px 5px 5px;
+    display: flex;
+    flex-wrap: nowrap;
+    width:820px;
+    height:65px;
+    border-radius:40px;
+    border: 2px solid black;
+    align-items: center;
+    gap: 10px;
+    transition: width 0.35s ease , height 0.35s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative;
+    box-sizing: border-box;
+}
+.filter-options:not(.is-clicked):hover {
+  background-color: rgba(255, 220, 138, 0.584);
+}
+.filter-options{
+    position: relative;
+    height: 100%;
+    width: 33.333%;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease, display 0.5s ease-out;
+}
+
+
+.logo-container{
+    background-color: rgb(255, 213, 0);
+    padding: 0 8px 0 8px;
+    font-family: "Space Grotesk", sans-serif;
+    /* font-weight: bolder; */
+    width: max-content;
+    height:56px;
+    font-size: 34px;
+    font-weight: 700;
+    
+    border-radius: 40px;
+    border: 2px solid black;
+    box-shadow: 7px 7px;
+    transition: height 0.35s ease;
+}
+.logo-container a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+label{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+}
+.filter-options input,
+.filter-options p{
+    font-size: 15px;
+    border: none;
+    background-color: transparent;
+    color: grey;
+    font-family: "Montserrat", sans-serif;
+
+}
+hr{
+    height: 50%;
+    border: none;  
+    width: 1.5px;
+    background-color: rgb(195, 196, 195);
+    /* color: green; */
+}
+/* CHANGE THIS IN YOUR CSS */
+.text {
+    margin: 0 0 0 24px; /* Removes top/bottom/right margin, keeps a clean left indent */
+}
+.filter-options input:focus{
+    outline: none;
+}
+.filter-options:hover + hr{
+    opacity: 0;
+}
+:has(.filter-options:hover)  hr:has(~ .filter-options){
+    opacity: 0;
+}
+.nav-container svg{
+    height: 50px;
+    flex-shrink: 0;
+    /* position: absolute; */
+}
+.searchBtn svg{
+    height: 50px;
+    width: 30px;
+}
+.nav-container button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-52%);
+    bottom: 0%;
+    right: 13px;
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+    border: 2px solid black;
+    box-shadow: 2px 2px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    overflow: hidden;
+    background-color: rgb(240, 53, 112);
+    justify-content: center;
+    padding-left: 4px;
+}
+.nav-container button svg{
+    color: white;
+}
+/* Inject the text here instead */
+.nav-container button::after {
+    content: " "; 
+    /* display: none; */
+}
+.non-focus{
+    display: inline;
+}
+.nav-container .option-onclick{
+    width: 120px;
+}
+.nav-container .filter-options::before{
+    height: 100%;
+    width: 100%;
+    content: "";
+    position: absolute;
+    background-color: rgba(231, 202, 107, 0.738);
+    top: 0%;
+    left: 0%;
+    transform: scale(0.94);
+    z-index: -1;
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),opacity 0.4s ease-out;
+    will-change: transform, opacity;
+    border-radius: 12px;
+}
+.nav-container .onclick-input{
+    transform: scale(1);
+    opacity: 1;
+}
+.nav-container{
+    border: 2px solid black;
+    box-shadow: 7px 7px 0px;
+
+}
+
+.account{
+    height: 56px;
+    border-radius: 50px;
+    /* padding: 0px 7px 0px 10px; */
+    width: 56px;
+    background-color: rgb(255, 149, 11);
+    /* border-radius: 50%; */
+    box-shadow: 4px 4px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    text-align: justify;
+    font-family: "Bagel Fat One", system-ui;
+    transition: all 0.3s ease;
+}
+.account:active{
+    box-shadow: 0px 0px;
+    transform: translate(4px,4px);
+}
+.nav-container:active{
+    box-shadow: 0px 0px;
+    transform: translate(4px,4px);
+}
+/* good{
+    background-color: rgb(255, 196, 0);
+    height: 100%;
+    position: absolute;
+    top: 0;   
+    left: 0;  
+    border-radius: 40px;
+    z-index: -1;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), width 0.3s ease, opacity 0.2s ease;
+    transform: translateX(0);
+    opacity: 0; 
+    border: 2px solid black;
+    box-sizing: border-box; 
+} */
+.nav-container .opacity-come{
+    opacity: 1;
+}
+nav.scrolled{
+    padding: 14px 60px 14px 60px;
+    
+}
+nav.scrolled .nav-container{
+    height: 65px;
+    width: 200px;
+    text-align: center;
+    box-sizing: border-box;
+}
+nav.scrolled .searchBtn{
+    height: 35px;
+    width: 35px;
+    /* box-sizing: border-box; */
+}
+nav.scrolled .searchBtn svg{
+    width: 24px;
+}
+nav.scrolled .filter-options input,nav.scrolled .filter-options label,nav.scrolled .filter-options p{
+    display: none;
+}
+nav.scrolled  .logo-container{
+    height: 50px;
+    box-sizing: border-box;
+
+}
+nav.scrolled .nav-container{
+    display: flex;
+}
+nav.scrolled .filter-options{
+    display: none;
+    width: 100%;
+    background-color: blue;
+    box-sizing: border-box;
+}
+nav.scrolled .Mover{
+    display: none;
+}
+nav.scrolled .search{
+    padding-left: 20px;
+    background-color: rgb(255, 196, 0);
+    border: 2px solid black;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+.Mover{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 2px solid black;
+    background-color: rgb(255, 196, 0);
+    z-index: -1;
+    border-radius: 40px;
+    opacity: 0;
+    transition: transform 0.35s ease,opacity 0.35s ease;
+}
+
+.nav-container .search{
+    width: 102%;
+    height: 100%;
+    text-align: left;
+    background-color: aquamarine;
+    /* position: absolute; */
+    display: none;
+}
+
+.Focused{
+    opacity: 1;
+}
