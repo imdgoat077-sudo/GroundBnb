@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ground Bnb</title>
+    <link rel="stylesheet" href="/style/main/main-test.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="title">
+        <span class="welcome">Welcome To</span>
+        <span class="logo">Ground Bnb</span>
+    </div>
+    <div class="main">
+        <div class="mobile-screen">
+            <div class="main-screen">
+                <div class="notification-bar"></div>
+                <div class="work-screen">
+                    <button class="login">Login Into Gnb</button>
+                    <button class="sign-up">Sign Up To Gnb</button>
+                    <button class="cool">Wanna See Something Cool ?</button>
+                </div>
+                <div class="navigation">
+                    <button class="home nav-btn"><img src="/icons/user-icons/home.svg" alt=""></button>
+                    <button class="back nav-btn"><img src="/icons/user-icons/back.svg" alt=""></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animation Canvas -->
+    <div class="parent-container">
+        <div class="parent">
+            <div class="deck">
+                <% allListings.forEach(listing => { %>
+                    <div class="card" id="<%= listing._id %>">
+                        <div class="card-holder">
+                            <img src="<%= listing.image.url %>" alt="">
+                            <div class="card-detail">
+                                <p class="par-title"><%= listing.title %></p>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+            <div class="flying-layer"></div>
+        </div>
+    </div>
+    
+    <script src="/script/frontend-main-test.js"></script>
+</body>
+</html>

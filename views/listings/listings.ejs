@@ -1,0 +1,39 @@
+<%-include("../includes/nav")%>
+<link rel="stylesheet" href="/style/index/index_new.css">
+    <main>
+        <div class="all-cards">
+            <% allListings.forEach(listing=>{%>
+                <div class="card" id="<%=listing._id%>">
+                    <a href="/listings/<%=listing._id%>">
+                        <div class="card-holder">
+                            <img src="<%=listing.image.url%>" alt="">
+                            <div class="card-detail">
+                                <p class="title"><%=listing.title%></p>
+                                <div class="extra-details">
+                                    <p class="price">&#8377;<%=listing.price.toLocaleString("en-IN")%></p>
+                                    <p class="rating">
+                                        <svg width="100" height="100" viewBox="0 0 24 24" fill="currentColor" xmlns="http://w3.org">
+                                        <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                                        </svg>
+                                        <span>5</span>
+                                    </p>
+                                </div>
+                                <div class="location">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><%=listing.location%>,<%=listing.country%>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </a>
+                    <button id = "like-btn"type="">
+                        <svg class="heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                            <path d="m15.9998 28.6668c7.1667-4.8847 14.3334-10.8844 14.3334-18.1088 0-1.84951-.6993-3.69794-2.0988-5.10877-1.3996-1.4098-3.2332-2.11573-5.0679-2.11573-1.8336 0-3.6683.70593-5.0668 2.11573l-2.0999 2.11677-2.0988-2.11677c-1.3995-1.4098-3.2332-2.11573-5.06783-2.11573-1.83364 0-3.66831.70593-5.06683 2.11573-1.39955 1.41083-2.09984 3.25926-2.09984 5.10877 0 7.2244 7.16667 13.2241 14.3333 18.1088z"/>
+                        </svg>
+                    </button>
+                </div>
+            <%}) %>
+        </div>
+    </main>
+    <script src="script/index_new.js"></script>
+</body>
+</html>

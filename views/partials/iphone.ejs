@@ -1,0 +1,20 @@
+<div class="main-screen">
+    <div class="iphone-screen">
+        <div class="notification-bar">
+            <div class="cam"><img src="/images/camera-dot-image.png" alt=""></div>
+            <div class="tick-div" >
+                <div class="tick"><img src="/images/green-new-tik.png" alt=""></div>
+                <div class="tick-content" >
+                    <p>Password Or Username Is Wrong</p>
+                </div>
+            </div>
+        </div>
+        <div id="all-screens">
+            <%-include("iphone-workscreen.ejs")%>
+            <%-include("iphone-login.ejs")%>    
+            <%-include("iphone-signup.ejs")%> 
+        </div>
+    </div>
+    <script src="/script/index/buttonFunctionals.js"></script>
+    <script src="/script/index/formValidations.js"></script>
+</div>

@@ -29,13 +29,19 @@
                     <div class="ratings"><p>★ &middot; 5&nbsp;&middot;&nbsp;&nbsp;<a href="#rating-box-container">View All 6 Reviews</a></p></div>
                 </div>
                 <div class="description">
-                    <h2>Description : </h2>
+                    <h2> &nbsp;Description </h2>
                     <p>
                         <%-reqListing.description%>
                     </p>
                     <button class="maximize"><img src="/icons/user-icons/expand.svg" alt=""></button>
                 </div>
                 <div class="body-backdrop">
+                    <div class="card-expand">
+                        <img src="<%=reqListing.image.url%>" alt="">
+                        <div class="small-info-expand">
+                            <%=reqListing.title%>
+                        </div>
+                    </div>
                     <div class="expanded">
                         <h2>Description : </h2>
                         <p>
@@ -99,20 +105,22 @@
                         <div class="text summa" >Per Night : </div>
                         <div class="price text">₹ <%=reqListing.price%> Only</div>
                     </div>
-                    <div class="price-final">
-                        <div class="price-breakdown">
-                            <span id="breakdown-text">₹ <%=reqListing.price%> × 1 night</span>
-                            <span id="breakdown-amount">₹ <%=reqListing.price%></span>
+                    <div class="after-calc">
+    <div class="price-final">
+                            <div class="price-breakdown">
+                                <span id="breakdown-text">₹ <%=reqListing.price%> × 1 night</span>
+                                <span id="breakdown-amount">₹ <%=reqListing.price%></span>
+                            </div>
+                            <hr class="price-divider">
+                            <div class="total-row">
+                                <span>Total Price : </span>
+                                <span id="final-total">₹ <%=reqListing.price%></span>
+                            </div>
                         </div>
-                        <hr class="price-divider">
-                        <div class="total-row">
-                            <span>Total Price : </span>
-                            <span id="final-total">₹ <%=reqListing.price%></span>
-                        </div>
+                        <button id="final-reserve">
+                            Reserve
+                        </button>
                     </div>
-                    <button id="final-reserve">
-                        Reserve
-                    </button>
                 </div>
             </div>
         </div>   
