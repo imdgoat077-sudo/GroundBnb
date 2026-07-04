@@ -3,6 +3,31 @@
   --scrollbar-track-color: #f5f0e1;
   --scrollbar-thumb-color: #4ca4f6;
   --scrollbar-thumb-hover: #96ccf8;
+  --bg-dark:#373636;
+  --bg-image: radial-gradient(#f5f0e152 2px, transparent 2px);
+
+--card: #4F4F4F;
+    --card-hover: #505050;
+    --card-active: #5b5b5b;
+    --border: #666565;
+    --border-hover: #7b7b7b;
+    /* Text */
+    --text-primary: #F8F8F8;
+    --text-secondary: #D2D2D2;
+    --text-muted: #A7A7A7;
+
+    /* Accent */
+    --primary: #4CA4F6;
+    --primary-hover: #78BFFF;
+
+    /* Status */
+    --success: #39D98A;
+    --warning: #F6C344;
+    --danger: #FF6B6B;
+
+    /* Shadows */
+    --shadow: rgba(0,0,0,.35);
+
 }
 *{
     padding: 0;
@@ -14,6 +39,9 @@ main{
     background-color:#f5f0e1;
     padding: 50px;
     padding-top:30px;
+    background-color: var(--bg-dark);
+    background-image: var(--bg-image);
+    background-size: 24px 24px;
 }
 .all-cards{
     display: flex;
@@ -23,7 +51,8 @@ main{
     padding: 8px;
 }
 .card{
-    background-color: white;
+    background-color: var(--card);
+    color:var(--text-primary) ;
     position: relative;
     text-decoration: none;   /* Removes the default underline */
     color: inherit; 
@@ -106,6 +135,7 @@ a{
 }
 .title{
   font-family: "Space Grotesk", sans-serif;
+  color:var(--text-primary) ;
   font-weight: 650;
   font-size: 18px;
   padding-left: 10px;
@@ -129,7 +159,7 @@ a{
     font-family: "Montserrat", sans-serif;
     justify-content: space-between;
     font-weight: 500;
-    color: rgb(81, 81, 81);
+    color:var(--text-secondary) ;
 }
 /* .card-holder:hover::before{
     transform: scale(1);

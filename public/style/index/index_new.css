@@ -75,7 +75,7 @@ a{
     position: relative;
     text-decoration: none;   
     color: inherit; 
-    height: 370px;
+    height: 400px;
     width: 25%;
     flex: 1 1 300px;
     max-width: 320px;
@@ -107,6 +107,7 @@ a{
 .card-holder img {
     width: 100%;
     height: 270px;
+    margin-bottom: 10px;
     object-fit: cover;
     border-radius: 18px;
     border: 3px solid black;
